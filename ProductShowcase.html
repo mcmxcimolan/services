@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Showcase</title>
+  <script src="https://cdn.tailwindcss.com "></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .product-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .active-tab {
+      background-color: #6366f1;
+      font-weight: bold;
+    }
+
+    .fade-enter {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .fade-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.5s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-indigo-500">My Product</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#features" class="hover:text-indigo-400">Features</a>
+        <a href="#gallery" class="hover:text-indigo-400">Gallery</a>
+        <a href="#pricing" class="hover:text-indigo-400">Pricing</a>
+        <a href="#faq" class="hover:text-indigo-400">FAQ</a>
+      </nav>
+      <button id="menu-button" class="md:hidden text-indigo-400 focus:outline-none">☰</button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 py-2">
+      <a href="#features" class="block py-2 hover:text-indigo-400">Features</a>
+      <a href="#gallery" class="block py-2 hover:text-indigo-400">Gallery</a>
+      <a href="#pricing" class="block py-2 hover:text-indigo-400">Pricing</a>
+      <a href="#faq" class="block py-2 hover:text-indigo-400">FAQ</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Introducing <span class="text-indigo-400">My Amazing Product</span>
+      </h2>
+      <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">
+        A sleek, modern solution to elevate your workflow and boost productivity.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#pricing" class="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-md inline-block transition">
+          Get Started
+        </a>
+        <a href="#features" class="bg-gray-700 hover:bg-gray-600 text-white py-3 px-6 rounded-md inline-block transition">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-gray-800 section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-10 text-center">Why Choose Our Product?</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-indigo-500/30 transition">
+          <div class="w-12 h-12 bg-indigo-600 flex items-center justify-center rounded-full mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">Modern Design</h4>
+          <p class="text-gray-300">Built with a clean and elegant UI that adapts to your style and workflow.</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-indigo-500/30 transition">
+          <div class="w-12 h-12 bg-indigo-600 flex items-center justify-center rounded-full mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">Fast Performance</h4>
+          <p class="text-gray-300">Optimized for speed and efficiency, delivering results in record time.</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg shadow hover:shadow-indigo-500/30 transition">
+          <div class="w-12 h-12 bg-indigo-600 flex items-center justify-center rounded-full mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">Secure & Reliable</h4>
+          <p class="text-gray-300">Your data is protected with enterprise-grade security and privacy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-8 text-center">Product Gallery</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <img src="https://placehold.co/600x400/4f46e5/white?text=Feature+1" alt="Gallery 1" class="w-full h-56 object-cover rounded-lg shadow hover:shadow-indigo-500/30 transition" />
+        <img src=" https://placehold.co/600x400/6366f1/white?text=Feature+2" alt="Gallery 2" class="w-full h-56 object-cover rounded-lg shadow hover:shadow-indigo-500/30 transition" />
+        <img src=" https://placehold.co/600x400/7c3aed/white?text=Feature+3" alt="Gallery 3" class="w-full h-56 object-cover rounded-lg shadow hover:shadow-indigo-500/30 transition" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 bg-gray-800 section">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-10 text-center">Pricing Plans</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-700 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-semibold mb-2">Basic</h4>
+          <p class="text-gray-300 mb-4">Perfect for individuals just getting started.</p>
+          <p class="text-3xl font-bold text-indigo-400 mb-4">$9<span class="text-sm font-normal text-gray-400">/mo</span></p>
+          <ul class="text-gray-300 space-y-2 mb-6">
+            <li>✔ Feature One</li>
+            <li>✔ Feature Two</li>
+            <li>✘ Feature Three</li>
+          </ul>
+          <a href="#" class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md transition">
+            Choose Plan
+          </a>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg shadow border-2 border-indigo-500 relative">
+          <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Most Popular</span>
+          <h4 class="text-xl font-semibold mb-2">Pro</h4>
+          <p class="text-gray-300 mb-4">For professionals and growing teams.</p>
+          <p class="text-3xl font-bold text-indigo-400 mb-4">$29<span class="text-sm font-normal text-gray-400">/mo</span></p>
+          <ul class="text-gray-300 space-y-2 mb-6">
+            <li>✔ Feature One</li>
+            <li>✔ Feature Two</li>
+            <li>✔ Feature Three</li>
+          </ul>
+          <a href="#" class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md transition">
+            Choose Plan
+          </a>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-semibold mb-2">Enterprise</h4>
+          <p class="text-gray-300 mb-4">For large organizations and custom needs.</p>
+          <p class="text-3xl font-bold text-indigo-400 mb-4">Custom</p>
+          <ul class="text-gray-300 space-y-2 mb-6">
+            <li>✔ Feature One</li>
+            <li>✔ Feature Two</li>
+            <li>✔ Feature Three</li>
+          </ul>
+          <a href="#" class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md transition">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 section">
+    <div class="max-w-3xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h3>
+      <div class="space-y-4">
+        <div class="bg-gray-800 p-4 rounded-md">
+          <h4 class="font-semibold mb-2">What is My Product?</h4>
+          <p class="text-gray-300">My Product is a modern solution designed to streamline your workflow and improve efficiency.</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-md">
+          <h4 class="font-semibold mb-2">How does the free trial work?</h4>
+          <p class="text-gray-300">We offer a 14-day free trial so you can test all features before committing.</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-md">
+          <h4 class="font-semibold mb-2">Can I cancel anytime?</h4>
+          <p class="text-gray-300">Yes! You can cancel your subscription at any time without any hidden fees.</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-md">
+          <h4 class="font-semibold mb-2">Do you offer support?</h4>
+          <p class="text-gray-300">Yes! Our support team is available 24/7 to help with any issues or questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-8 text-center text-gray-400">
+    <p>&copy; 2025 Mcmxci Molangoanyane. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

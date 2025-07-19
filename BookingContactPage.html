@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking / Contact Page</title>
+  <script src="https://cdn.tailwindcss.com "></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .form-control {
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus-within {
+      transform: scale(1.01);
+      box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+    }
+
+    .button-hover:hover {
+      background-color: #6366f1;
+    }
+
+    .success-message {
+      display: none;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-indigo-500">Book & Contact</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#booking" class="hover:text-indigo-400">Booking</a>
+        <a href="#contact" class="hover:text-indigo-400">Contact</a>
+        <a href="#faq" class="hover:text-indigo-400">FAQ</a>
+      </nav>
+      <button id="menu-button" class="md:hidden text-indigo-400 focus:outline-none">☰</button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 py-2">
+      <a href="#booking" class="block py-2 hover:text-indigo-400">Booking</a>
+      <a href="#contact" class="block py-2 hover:text-indigo-400">Contact</a>
+      <a href="#faq" class="block py-2 hover:text-indigo-400">FAQ</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Schedule a Call or <span class="text-indigo-400">Get in Touch</span>
+      </h2>
+      <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">
+        Choose a time that works for you or reach out directly using the contact form.
+      </p>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="py-20 bg-gray-800 section">
+    <div class="max-w-4xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-6 text-center">Book a Session</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Calendar -->
+        <div class="bg-gray-700 p-6 rounded-lg shadow">
+          <h4 class="font-semibold text-lg mb-4">Select a Date & Time</h4>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-3 bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
+              <span>Mon, Apr 7 - 10:00 AM</span>
+              <button class="text-indigo-400 hover:text-indigo-300">Book</button>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
+              <span>Tue, Apr 8 - 2:00 PM</span>
+              <button class="text-indigo-400 hover:text-indigo-300">Book</button>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
+              <span>Wed, Apr 9 - 4:00 PM</span>
+              <button class="text-indigo-400 hover:text-indigo-300">Book</button>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
+              <span>Thu, Apr 10 - 11:00 AM</span>
+              <button class="text-indigo-400 hover:text-indigo-300">Book</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking Info -->
+        <div class="bg-gray-700 p-6 rounded-lg shadow">
+          <h4 class="font-semibold text-lg mb-4">Booking Details</h4>
+          <p class="text-gray-300 mb-4">
+            Please select a time slot above. Once booked, you will receive a confirmation email with a calendar invite and Zoom link.
+          </p>
+          <ul class="text-gray-300 space-y-2">
+            <li>✔ 30-minute consultation</li>
+            <li>✔ Flexible rescheduling</li>
+            <li>✔ No-show policy: 24-hour notice</li>
+          </ul>
+          <div class="mt-6 text-center">
+            <p class="text-sm text-gray-400">Need a custom time? <a href="#contact" class="text-indigo-400 underline">Contact us</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 section">
+    <div class="max-w-3xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-6 text-center">Send Us a Message</h3>
+      <form id="contact-form" class="space-y-6">
+        <div class="form-control">
+          <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+          <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
+        </div>
+        <div class="form-control">
+          <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Your Email</label>
+          <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
+        </div>
+        <div class="form-control">
+          <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Your Message</label>
+          <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
+        </div>
+        <button type="submit" class="w-full bg-indigo-600 button-hover hover:bg-indigo-700 text-white py-2 px-4 rounded-md transition">
+          Send Message
+        </button>
+      </form>
+      <div id="success-message" class="success-message max-w-md mx-auto mt-6 p-4 bg-green-800 text-white rounded-md text-center">
+        ✅ Thank you! Your message has been sent successfully.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 bg-gray-800 section">
+    <div class="max-w-3xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h3>
+      <div class="space-y-4">
+        <div class="bg-gray-700 p-4 rounded-md">
+          <h4 class="font-semibold mb-2">How long is a consultation call?</h4>
+          <p class="text-gray-300">Each session lasts approximately 30 minutes.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-md">
+          <h4 class="font-semibold mb-2">Can I reschedule my appointment?</h4>
+          <p class="text-gray-300">Yes, you can reschedule anytime via the calendar invite.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-md">
+          <h4 class="font-semibold mb-2">What if I need more time?</h4>
+          <p class="text-gray-300">We can book additional sessions if needed during your call.</p>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-md">
+          <h4 class="font-semibold mb-2">Is there a cancellation policy?</h4>
+          <p class="text-gray-300">Yes, please provide at least 24 hours notice to avoid rescheduling fees.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 text-center text-gray-400">
+    <p>&copy; 2025 Mcmxci Molangoanyane. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Form Submission -->
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Simple validation
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (name && email && message) {
+        successMessage.style.display = 'block';
+        form.reset();
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 5000);
+      }
+    });
+
+    // Mobile Menu Toggle
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

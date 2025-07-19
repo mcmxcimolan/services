@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon</title>
+  <script src="https://cdn.tailwindcss.com "></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .countdown-digit {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    .countdown-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    .slide-up {
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+
+  <div class="text-center px-4">
+    <!-- Logo / Brand -->
+    <div class="mb-8">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-600 rounded-full mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold">Your Product Name</h1>
+      <p class="text-indigo-400 mt-2">Launching soon</p>
+    </div>
+
+    <!-- Hero Message -->
+    <h2 class="text-2xl md:text-3xl font-semibold mb-6">We're launching something amazing!</h2>
+    <p class="text-gray-300 max-w-md mx-auto mb-10">
+      Stay tuned for the official launch of our product. We're working hard to bring you something truly special.
+    </p>
+
+    <!-- Countdown Timer -->
+    <div class="flex justify-center gap-6 md:gap-10 mb-12">
+      <div class="text-center">
+        <div class="countdown-digit" id="days">00</div>
+        <div class="countdown-label mt-1">Days</div>
+      </div>
+      <div class="text-center">
+        <div class="countdown-digit" id="hours">00</div>
+        <div class="countdown-label mt-1">Hours</div>
+      </div>
+      <div class="text-center">
+        <div class="countdown-digit" id="minutes">00</div>
+        <div class="countdown-label mt-1">Minutes</div>
+      </div>
+      <div class="text-center">
+        <div class="countdown-digit" id="seconds">00</div>
+        <div class="countdown-label mt-1">Seconds</div>
+      </div>
+    </div>
+
+    <!-- Email Subscription Form -->
+    <div class="max-w-md mx-auto mb-10">
+      <form id="email-form" class="flex flex-col sm:flex-row gap-3">
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+          class="flex-grow px-4 py-3 bg-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+        <button
+          type="submit"
+          class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-md transition"
+        >
+          Notify Me
+        </button>
+      </form>
+      <div id="success-message" class="hidden mt-3 text-green-400 slide-up">
+        ✅ Thanks! We'll notify you when we launch.
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="flex justify-center gap-6 mt-8">
+      <a href="#" class="text-gray-400 hover:text-indigo-400 transition" aria-label="Twitter">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.195 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59z" />
+        </svg>
+      </a>
+      <a href="#" class="text-gray-400 hover:text-indigo-400 transition" aria-label="Facebook">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+        </svg>
+      </a>
+      <a href="#" class="text-gray-400 hover:text-indigo-400 transition" aria-label="Instagram">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+      &copy; 2025 Mcmxci Molangoanyane. All rights reserved.
+    </footer>
+  </div>
+
+  <!-- JavaScript for Countdown and Form -->
+  <script>
+    // Countdown Timer
+    const countdown = () => {
+      const launchDate = new Date("April 15, 2025 00:00:00").getTime();
+      let timer;
+
+      const update = () => {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        if (distance < 0) {
+          document.getElementById("days").textContent = "00";
+          document.getElementById("hours").textContent = "00";
+          document.getElementById("minutes").textContent = "00";
+          document.getElementById("seconds").textContent = "00";
+          clearInterval(timer);
+        } else {
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById("days").textContent = days.toString().padStart(2, '0');
+          document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+          document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+          document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+        }
+      };
+
+      update();
+      timer = setInterval(update, 1000);
+    };
+
+    countdown();
+
+    // Email Form Submission
+    const form = document.getElementById("email-form");
+    const successMessage = document.getElementById("success-message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Basic validation
+      const emailInput = document.getElementById("email");
+      const email = emailInput.value.trim();
+
+      if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        successMessage.classList.remove("hidden");
+        successMessage.classList.add("slide-up");
+        form.reset();
+        setTimeout(() => {
+          successMessage.classList.add("hidden");
+        }, 5000);
+      }
+    });
+  </script>
+
+</body>
+</html>
