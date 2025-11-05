@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MCMXCI Kreyasions Services</title>
+  <link rel="icon" href="1752904136.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .flip-card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .flip-card {
+      background-color: transparent;
+      width: 280px;
+      height: 220px;
+      perspective: 1000px;
+      margin: 10px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+    }
+
+    .flip-card-front {
+      background: white;
+    }
+
+    .flip-card-back {
+      background: white;
+      transform: rotateY(180deg);
+      padding: 25px;
+    }
+    
+    .flip-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .flip-card p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    
+    .price {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .flip-order-btn {
+            background: #00756a;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s 0.2s;
+            z-index: 1;
+            box-shadow: 0 6px 20px rgba(0, 117, 106, 0.4);
+            letter-spacing: 0.5px;
+        }
+        
+        .flip-order-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #f5f1e6;
+            transition: left 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+            z-index: -1;
+            border-radius: 6px;
+        }
+        
+        .flip-order-btn:hover {
+            color: black;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0, 117, 106, 0.5);
+        }
+        
+        .flip-order-btn:hover::before {
+            left: 0;
+        }
+        
+        .flip-order-btn:not(:hover)::before {
+            left: -100%;
+            transition: left 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+    .dark .flip-card-front, 
+    .dark .flip-card-back {
+      background: #1e1e1e;
+      border: none;
+      color: white;
+    }
+    
+    .dark .flip-card h3 {
+      color: white;
+    }
+    
+    .dark .price {
+      color: white;
+    }
+    
+    .dark .flip-order-btn {
+      background: #00756a;
+    }
+    
+    .dark .flip-order-btn:hover {
+      background: #005c44;
+    }
+    
+    
+    @media (max-width: 768px) {
+      .flip-card {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <label class="switch">
+    <input type="checkbox" id="theme-toggle">
+    <span class="slider round"></span>
+  </label>
+
+  <header>
+    <h1 class="main-title">MCMXCI Kreyasions Services</h1>
+  </header>
+
+  <section class="options">
+    <h2 class="section-title">CIPC Services</h2>
+    <div class="flip-card-container">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Company Registration</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Register a profit or non-profit company.</p>
+            <p class="price">Profit: R600 | Non-Profit: R950</p>
+            <a href="https://wa.me/27712905286?text=I%20would%20like%20to%20register%20a%20company." class="flip-order-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Joint Venture Agreement</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Draft a legally binding joint venture agreement.</p>
+            <p class="price">R550</p>
+            <a href="https://wa.me/27712905286?text=I%20would%20like%20a%20Joint%20Venture%20Agreement." class="flip-order-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>B-BBEE Affidavit</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Submit a B-BBEE affidavit for compliance.</p>
+            <p class="price">R80</p>
+            <a href="https://wa.me/27712905286?text=I%20would%20like%20a%20B-BBEE%20Affidavit." class="flip-order-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Business Profile</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Create a professional business profile document.</p>
+            <p class="price">R350</p>
+            <a href="https://wa.me/27712905286?text=I%20would%20like%20a%20Business%20Profile." class="flip-order-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Share Certificate</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Issue or update share certificates.</p>
+            <p class="price">R50</p>
+            <a href="https://wa.me/27712905286?text=I%20would%20like%20a%20Share%20Certificate." class="flip-order-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Company Amendments</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Update company details with CIPC.</p>
+            <p class="price">R250</p>
+            <a href="https://wa.me/27712905286?text=I%20would%20like%20to%20make%20Company%20Amendments." class="flip-order-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Beneficial Ownership (BO)</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Submit your beneficial ownership details to CIPC.</p>
+            <p class="price">R150</p>
+            <a href="https://wa.me/27712905286?text=I%20would%20like%20to%20submit%20Beneficial%20Ownership%20details." class="flip-order-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="custom-request">
+    <h2 class="section-title">Need a Website?</h2>
+    <p>Clean, mobile-friendly sites, delivered in 48 hours.</p>
+  </section>
+
+  <section class="options">
+
+    <h2 class="section-title">Choose Your Website Type</h2>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>Business Card Site</h3>
+        <p>Simple 1-pager to showcase your brand.</p>
+	<br>
+        <a href="BusinessCard.html" target="_blank" class="link">>See Example</a>
+	<br>
+        <a href="https://wa.me/27712905286?text=I%20would%20like%20to%20get%20a%20Business%20Card%20Site." color: white; target="_blank" class="flip-order-btn">Order Now
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Portfolio / CV Site</h3>
+        <p>Show your work, skills, and experience.</p>
+	<br>
+        <a href="PortfolioCVSite.html" target="_blank" class="link">See Example</a>
+	<br>
+        <a href="https://wa.me/27712905286?text=I%20would%20like%20to%20get%20a%20Portfolio%20/%20CV%20Site." target="_blank" class="flip-order-btn">Order Now
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Product Showcase</h3>
+        <p>Highlight your product or service beautifully.</p>
+	<br>
+        <a href="ProductShowcase.html" target="_blank" class="link">See Example</a>
+	<br>
+        <a href="https://wa.me/27712905286?text=I%20would%20like%20to%20get%20a%20Product%20Showcase%20Site." target="_blank" class="flip-order-btn">Order Now
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Booking or Contact Page</h3>
+        <p>Let clients reach you easily or make bookings.</p>
+	<br>
+        <a href="BookingContactPage.html" target="_blank" class="link">See Example</a>
+	<br>
+        <a href="https://wa.me/27712905286?text=I%20would%20like%20to%20get%20a%20Booking%20or%20Contact%20Page." target="_blank" class="flip-order-btn">Order Now
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Coming Soon Page</h3>
+        <p>Build anticipation with a countdown or message.</p>
+	<br>
+        <a href="ComingSoon.html" target="_blank" class="link">See Example</a>
+	<br>
+        <a href="https://wa.me/27712905286?text=I%20would%20like%20to%20get%20a%20Coming%20Soon%20Page." target="_blank" class="flip-order-btn">Order Now
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="custom-request">
+    <h2 class="section-title">Have Your Own Idea?</h2>
+    <p>Tell me what you're thinking and I'll make it happen.</p>
+  </section>
+
+  <footer>
+    <h2 class="section-title">Let's Get Started</h2>
+    <a href="https://wa.me/27712905286" class="flip-order-btn">📲 WhatsApp Me</a>
+    <br>
+    <br>
+    <br>
+    <p>&copy; 2025 Mcmxci Kreyasions. All rights reserved</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark');
+    });
+    
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.body.classList.add('dark');
+      toggle.checked = true;
+    }
+    
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+    
+  </script>
+</body>
+</html>
